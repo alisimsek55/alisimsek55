@@ -11,7 +11,7 @@ Görevim, Gazebo'daki uçak simülasyonunu PX4 ile çalıştırmak ve uçuş dur
 - Sanal kameradan gelen görüntülerin Python tarafında işlenmesi ve algılama/takip denemeleri.
 - Simülasyonda kalkış, eve dönüş ve belirlenen noktaya iniş senaryolarının denenmesi.
 
-Uçak tasarımı ve özel algılama modeli ekipte ayrı çalışmalar olarak ilerliyor. Projenin tamamı bireysel çalışmam değil.
+Uçak tasarımı ve özel algılama modeli ekipte ayrı çalışmalar olarak ilerliyor.
 
 ## Kullanılan araçlar
 
@@ -27,10 +27,10 @@ Uçak tasarımı ve özel algılama modeli ekipte ayrı çalışmalar olarak ile
 
 Simülasyon ortamında kamera, telemetri ve bileşenler arası veri akışı üzerinde çalışıldı. Önceki takip denemelerinde işaretli bir sanal hedef kullanıldı; bu sonuç, genel İHA algılama başarısı olarak değerlendirilmiyor.
 
-Güncel çalışma, özgün uçak modelinin entegrasyonu ve temel uçuş tutma işlevlerini içeren Pilot Relief yaklaşımına odaklanıyor. Özgün uçak verileri, kontrol ayarları ve özel algılama modeliyle yapılacak doğrulamalar sürüyor. Canlı hedef yönlendirmesi mevcut sürümde kapalı; gerçek uçuşta doğrulanmış otonom takip iddiası yok.
+Güncel çalışma, özgün uçak modelinin entegrasyonu ve temel uçuş tutma işlevlerini içeren Pilot Relief yaklaşımına odaklanıyor. Özgün uçak verileri, kontrol ayarları ve özel algılama modeliyle yapılacak doğrulamalar sürüyor. Canlı hedef yönlendirmesi mevcut sürümde kapalı. Buradaki denemeler simülasyonla sınırlı; gerçek uçuş doğrulaması ayrı bir aşama.
 
 ## Kod ve inceleme
 
-Kaynak kod özel depoda tutuluyor. Bu sayfa çalıştırılabilir bir demo veya kod örneği içermiyor. Teknik görüşmede simülasyon düzenini, üstlendiğim entegrasyon işlerini ve yapılan denemelerin sınırlarını anlatabilirim. Kodun paylaşım kapsamı ayrıca değerlendirilecektir.
+Kaynak kod şu anda özel depoda tutuluyor. Burada projenin amacını, benim sorumluluklarımı ve güncel aşamayı paylaşıyorum. Teknik görüşmede simülasyon düzenini, entegrasyon çalışmalarını ve yapılan denemeleri anlatabilirim. Kod paylaşımı için kapsamın ayrıca belirlenmesi gerekiyor.
 
 [Profilime dön](https://github.com/alisimsek55)
