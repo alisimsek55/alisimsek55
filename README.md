@@ -8,9 +8,9 @@ OSTİM Teknik Üniversitesi'nde 4. sınıf Yazılım Mühendisliği öğrencisiy
 
 **TAYGUN | İHA yazılım entegrasyonu ve uçuş simülasyonu**
 
-Üniversitede ekip olarak yürüttüğümüz TAYGUN'da simülasyon ve yazılım entegrasyonu tarafında çalışıyorum. Sorumluluğum PX4 ve Gazebo ortamını QGroundControl ile birlikte kullanmak, uçuş ve telemetri akışını izlemek ve sanal kameradan gelen görüntülerle algılama/takip denemeleri yapmak.
+Üniversitede ekip olarak yürüttüğümüz TAYGUN'da simülasyon ve yazılım entegrasyonu tarafında çalışıyorum. PX4, Gazebo ve QGroundControl entegrasyonu ile uçuş ve telemetri takibi üzerinde çalışıyorum. Sanal kamera görüntülerinden hedef takibi yapan algoritma geliştirdim ve simülasyon ortamında çalışmasını doğruladım.
 
-Proje geliştirme aşamasında. Simülasyon çalışmaları gerçek uçuş doğrulaması anlamına gelmiyor. Kaynak kod özel depoda tutuluyor; çalışma alanımı ve projenin mevcut aşamasını [TAYGUN proje notunda](https://github.com/alisimsek55/alisimsek55/blob/main/docs/TAYGUN.md) anlattım.
+Proje geliştirme aşamasında. Çalışma alanımı, proje özetini ve çalıştırılabilir telemetri örneğini [TAYGUN portföy deposunda](https://github.com/alisimsek55/TAYGUN-Portfolio) paylaştım. Ana proje özel depoda tutuluyor; portföydeki örnek sentetik veri kullanıyor.
 
 ## Çalışma alanlarım
 
