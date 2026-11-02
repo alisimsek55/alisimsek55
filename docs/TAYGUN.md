@@ -31,6 +31,6 @@ Güncel çalışma, özgün uçak modelinin entegrasyonu ve temel uçuş tutma i
 
 ## Kod ve inceleme
 
-Kaynak kod şu anda özel depoda tutuluyor. Burada projenin amacını, benim sorumluluklarımı ve güncel aşamayı paylaşıyorum. Teknik görüşmede simülasyon düzenini, entegrasyon çalışmalarını ve yapılan denemeleri anlatabilirim. Kod paylaşımı için kapsamın ayrıca belirlenmesi gerekiyor.
+Ana projenin kaynak kodu özel depoda tutuluyor. [TAYGUN portföy deposunda](https://github.com/alisimsek55/TAYGUN-Portfolio) proje özeti, sentetik telemetri verisiyle çalışan bağımsız bir Python örneği ve testler bulunuyor. Örnek, kayıt inceleme yaklaşımını göstermek için hazırlandı; ana uçuş veya takip yazılımının kaynak kodu değildir.
 
 [Profilime dön](https://github.com/alisimsek55)
