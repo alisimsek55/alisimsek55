@@ -1,23 +1,36 @@
-# Merhaba, ben Ali Şimşek
+# Hi, I'm Ali Şimşek
 
-OSTİM Teknik Üniversitesi'nde 4. sınıf Yazılım Mühendisliği öğrencisiyim. 2027'de mezun olmayı planlıyorum. İHA yazılımları ve Python ile görüntü işleme üzerine çalışıyorum; önceki stajlarımda web geliştirme süreçlerinde de yer aldım.
+Final-year Software Engineering student at OSTİM Technical University (Ankara, graduating 2027). I work on full-stack web apps, smart contracts / DeFi, UAV software and computer vision, and I use AI-assisted development in my daily workflow.
 
-Şu sıralar simülasyon, kamera verisi ve telemetri arasındaki bağlantı üzerinde çalışıyorum. Python ile kamera tabanlı el ve yüz takibi, Tkinter ile masaüstü arayüz çalışmaları da yaptım.
+## Featured project
 
-## Üzerinde çalıştığım proje
+### [Launchpad](https://github.com/alisimsek55/launchpad) · [Live demo (testnet)](https://launchpad-cyan-nu.vercel.app)
 
-**TAYGUN | İHA yazılım entegrasyonu ve uçuş simülasyonu**
+A pump.fun-style bonding-curve token launchpad on Robinhood Chain.
 
-Üniversitede ekip olarak yürüttüğümüz TAYGUN'da simülasyon ve yazılım entegrasyonu tarafında çalışıyorum. PX4, Gazebo ve QGroundControl entegrasyonu ile uçuş ve telemetri takibi üzerinde çalışıyorum. Sanal kamera görüntülerinden hedef takibi yapan algoritma geliştirdim ve simülasyon ortamında çalışmasını doğruladım.
+- **Contracts:** Solidity + Foundry, 40 tests including fuzz and invariant tests.
+- **Graduation:** tokens migrate automatically to Uniswap v3 once the curve fills, with the LP position locked.
+- **Backend:** Ponder indexer with a REST API and a DexScreener adapter; a GitHub Actions keeper handles scheduled jobs.
+- **Frontend:** Next.js 16 + wagmi. Runs entirely on free infrastructure (Vercel, Render, Neon).
 
-Proje geliştirme aşamasında. Çalışma alanımı, proje özetini ve çalıştırılabilir telemetri örneğini [TAYGUN portföy deposunda](https://github.com/alisimsek55/TAYGUN-Portfolio) paylaştım. Ana proje özel depoda tutuluyor; portföydeki örnek sentetik veri kullanıyor.
+## Other work
 
-## Çalışma alanlarım
+- **[TAYGUN](https://github.com/alisimsek55/TAYGUN-Portfolio):** fixed-wing UAV capstone project. I work on simulation and integration (PX4, Gazebo, QGroundControl, MAVLink) and built a target-tracking algorithm on simulated camera feeds.
+- **[el-yuz-takibi](https://github.com/alisimsek55/el-yuz-takibi):** real-time hand and face tracking desktop app (Python, OpenCV, MediaPipe).
 
-- **Python ve görüntü işleme:** OpenCV, MediaPipe; kamera akışı ve masaüstü arayüz çalışmaları.
-- **Simülasyon ve entegrasyon:** PX4, Gazebo, QGroundControl, ROS 2 ve MAVLink.
-- **Web temeli:** HTML, CSS ve SQL ile staj deneyimi.
+## Tech stack
 
-Yazılım geliştirme alanında staj fırsatlarına açığım. Yeni bir ekibin çalışma biçimini öğrenmek ve üstlendiğim işlerde sorumluluk almak istiyorum.
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Solidity](https://img.shields.io/badge/Solidity-363636?logo=solidity&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![Foundry](https://img.shields.io/badge/Foundry-1C1C1C)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+
+## Currently
+
+Learning, building, and **open to software engineering internships**.
 
 [LinkedIn](https://www.linkedin.com/in/ali-%C5%9Fim%C5%9Fek-701a88294)
