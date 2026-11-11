@@ -1,36 +1,73 @@
 # Hi, I'm Ali Şimşek
 
-Final-year Software Engineering student at OSTİM Technical University (Ankara, graduating 2027). I work on full-stack web apps, smart contracts / DeFi, UAV software and computer vision, and I use AI-assisted development in my daily workflow.
+Final-year Software Engineering student at **OSTİM Technical University** (Ankara, graduating 2027).
+I build full-stack web apps and smart contracts, work on UAV simulation for my capstone, and do computer vision in Python.
+I use AI-assisted development (Claude Code) in my daily workflow, and every public project here ships with tests and CI.
+**Open to software engineering internships.**
 
-## Featured project
+[Launchpad live demo](https://launchpad-cyan-nu.vercel.app) · [LinkedIn](https://www.linkedin.com/in/ali-%C5%9Fim%C5%9Fek-701a88294)
+
+## Featured projects
 
 ### [Launchpad](https://github.com/alisimsek55/launchpad) · [Live demo (testnet)](https://launchpad-cyan-nu.vercel.app)
 
-A pump.fun-style bonding-curve token launchpad on Robinhood Chain.
+[![CI](https://github.com/alisimsek55/launchpad/actions/workflows/ci.yml/badge.svg)](https://github.com/alisimsek55/launchpad/actions/workflows/ci.yml)
 
-- **Contracts:** Solidity + Foundry, 40 tests including fuzz and invariant tests.
-- **Graduation:** tokens migrate automatically to Uniswap v3 once the curve fills, with the LP position locked.
-- **Backend:** Ponder indexer with a REST API and a DexScreener adapter; a GitHub Actions keeper handles scheduled jobs.
-- **Frontend:** Next.js 16 + wagmi. Runs entirely on free infrastructure (Vercel, Render, Neon).
+A pump.fun-style bonding-curve token launchpad on Robinhood Chain (an Arbitrum Orbit L2): Solidity contracts, a Ponder indexer and a Next.js trading UI in one monorepo, deployed end to end on free tiers.
 
-## Other work
+<a href="https://launchpad-cyan-nu.vercel.app"><img src="https://raw.githubusercontent.com/alisimsek55/launchpad/main/docs/screenshots/demo.gif" width="640" alt="Launchpad demo: launching a token and trading it on the bonding curve"></a>
 
-- **[TAYGUN](https://github.com/alisimsek55/TAYGUN-Portfolio):** fixed-wing UAV capstone project. I work on simulation and integration (PX4, Gazebo, QGroundControl, MAVLink) and built a target-tracking algorithm on simulated camera feeds.
-- **[el-yuz-takibi](https://github.com/alisimsek55/el-yuz-takibi):** real-time hand and face tracking desktop app (Python, OpenCV, MediaPipe).
+- **One-transaction graduation:** the buy that fills the curve also opens a full-range Uniswap v3 position and locks the LP NFT, so the creator cannot pull liquidity. Covered by 39 unit and fuzz tests plus 3 invariants (Foundry, on a mainnet fork), all green in CI.
+- **A griefing attack that could block graduation forever:** an attacker could push the pre-created pool's price so far that the correction swap reverts. The fix caps that swap, and a [fuzz test](https://github.com/alisimsek55/launchpad/blob/main/packages/contracts/test/Manipulation.t.sol) throws random manipulations at it.
+- **`block.number` is the L1 block on Arbitrum chains**, so deploy scripts read the L2 head over RPC to give the indexer a correct start block. The live indexer lagged the ~7 blocks/s chain; I measured it, moved the service next to its database and cut per-block cache writes, and a full re-index now takes ~3 minutes.
 
-## Tech stack
+Built with Claude Code as an AI pair programmer: I set the product direction, reviewed the decisions and tested the main flows on the live network; the AI did much of the implementation ([details](https://github.com/alisimsek55/launchpad#how-it-was-built)). The indexer runs on a free tier, so the demo's first load can take about a minute.
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-![Solidity](https://img.shields.io/badge/Solidity-363636?logo=solidity&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
-![Foundry](https://img.shields.io/badge/Foundry-1C1C1C)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+**Stack:** Solidity, Foundry, OpenZeppelin, Uniswap v3 · TypeScript, Next.js 16, React 19, wagmi/viem · Ponder, Hono, PostgreSQL · pnpm + Turborepo · GitHub Actions (CI and a cron keeper) · Vercel, Render, Neon
 
-## Currently
+### [Real-time Hand & Face Tracking](https://github.com/alisimsek55/el-yuz-takibi)
 
-Learning, building, and **open to software engineering internships**.
+[![Tests](https://github.com/alisimsek55/el-yuz-takibi/actions/workflows/tests.yml/badge.svg)](https://github.com/alisimsek55/el-yuz-takibi/actions/workflows/tests.yml)
+
+A desktop app that tracks hand and face landmarks from a webcam in real time.
+
+<a href="https://github.com/alisimsek55/el-yuz-takibi"><img src="https://raw.githubusercontent.com/alisimsek55/el-yuz-takibi/main/docs/ekran-goruntusu.png" width="560" alt="The app tracking a hand (21-point skeleton) and a face (contours and irises) with live counters and FPS"></a>
+
+- **Responsive GUI:** capture and two neural networks run on a worker thread that publishes only the latest frame behind a lock; the Tk main loop is the only code that touches widgets, and stale frames are dropped instead of queuing.
+- **MediaPipe Tasks API:** `HandLandmarker` and `FaceLandmarker` in `VIDEO` mode, with timestamps clamped so two frames in the same millisecond cannot crash the tracker.
+- **Testable without hardware:** landmarks become plain tuples at the boundary and the FPS counter takes an injectable clock, so 15 pytest tests run in CI with no camera or model files.
+
+**Stack:** Python, OpenCV, MediaPipe, Tkinter/ttkbootstrap, pytest, GitHub Actions
+
+### [TAYGUN: fixed-wing UAV capstone](https://github.com/alisimsek55/TAYGUN-Portfolio)
+
+[![Python tests](https://github.com/alisimsek55/TAYGUN-Portfolio/actions/workflows/tests.yml/badge.svg)](https://github.com/alisimsek55/TAYGUN-Portfolio/actions/workflows/tests.yml)
+
+A university team project. I work on simulation and software integration: running the aircraft in Gazebo with PX4 SITL, monitoring flight state and telemetry in QGroundControl, and processing the simulated camera feed in Python, including detection and tracking experiments on a marked virtual target (simulation only). The flight code lives in a private team repo; the portfolio repo has a project summary and a standalone, tested telemetry-log summarizer that runs on synthetic data. More in [docs/TAYGUN.md](https://github.com/alisimsek55/alisimsek55/blob/main/docs/TAYGUN.md) (Turkish).
+
+**Stack:** PX4 SITL, Gazebo, QGroundControl, MAVLink, ROS 2, Python, OpenCV
+
+## Languages
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/alisimsek55/alisimsek55/main/assets/languages-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/alisimsek55/alisimsek55/main/assets/languages-light.svg">
+  <img src="https://raw.githubusercontent.com/alisimsek55/alisimsek55/main/assets/languages-light.svg" width="480" alt="Languages across my public repositories by bytes of code">
+</picture>
+
+<sub>Generated from my public repos by [a small script](https://github.com/alisimsek55/alisimsek55/blob/main/scripts/language_card.py) and a weekly GitHub Action; generated code is excluded ([config](https://github.com/alisimsek55/alisimsek55/blob/main/languages.config.json)).</sub>
+
+## Tech
+
+| Area | Tools I have used in the projects above |
+| --- | --- |
+| Languages | TypeScript, Solidity, Python |
+| Smart contracts | Foundry (unit, fuzz and invariant tests), OpenZeppelin, Uniswap v3 |
+| Web and backend | Next.js, React, wagmi/viem, Ponder, Hono, PostgreSQL, REST and GraphQL |
+| Computer vision and desktop | OpenCV, MediaPipe, Tkinter/ttkbootstrap |
+| UAV simulation | PX4 SITL, Gazebo, QGroundControl, MAVLink, ROS 2 |
+| Testing and DevOps | pytest, GitHub Actions, Vercel, Render, Neon, pnpm/Turborepo, Linux |
+
+## Contact
 
 [LinkedIn](https://www.linkedin.com/in/ali-%C5%9Fim%C5%9Fek-701a88294)
