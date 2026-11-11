@@ -39,6 +39,20 @@ A desktop app that tracks hand and face landmarks from a webcam in real time.
 
 **Stack:** Python, OpenCV, MediaPipe, Tkinter/ttkbootstrap, pytest, GitHub Actions
 
+### [Bean leaf disease classification with a from-scratch CNN](https://github.com/alisimsek55/bean-leaf-disease-cnn)
+
+[![tests](https://github.com/alisimsek55/bean-leaf-disease-cnn/actions/workflows/tests.yml/badge.svg)](https://github.com/alisimsek55/bean-leaf-disease-cnn/actions/workflows/tests.yml)
+
+A 16-layer CNN designed and trained from scratch in PyTorch to tell common bacterial blight, halo blight and healthy bean leaves apart, built for a university "AI in Agriculture" course.
+
+<a href="https://github.com/alisimsek55/bean-leaf-disease-cnn"><img src="https://raw.githubusercontent.com/alisimsek55/bean-leaf-disease-cnn/main/ciktilar/sekiller/on_isleme_oncesi_sonrasi.png" width="560" alt="Bean leaves before and after preprocessing: raw photo, leaf mask, and the background-removed crop the model sees"></a>
+
+- **Questioning a 97.6% validation accuracy:** each class came mostly from a different image source, so control experiments checked what the model had really learned. The same network identified the image source with 100% accuracy even after background removal, and only 5 of 25 blight leaves from a source it had never seen were classified correctly. The README reports the headline number as an upper bound, not a result.
+- **Leakage-safe split:** near-identical frames of the same leaf are grouped with a perceptual hash and kept on one side of the 70/30 split.
+- **Preprocessing against shortcuts:** leaves are segmented per source (HSV thresholding, GrabCut) and the background is painted black, so the model cannot classify by backdrop.
+
+**Stack:** Python, PyTorch, OpenCV, scikit-learn, pytest, GitHub Actions
+
 ### [TAYGUN: fixed-wing UAV capstone](https://github.com/alisimsek55/TAYGUN-Portfolio)
 
 [![Python tests](https://github.com/alisimsek55/TAYGUN-Portfolio/actions/workflows/tests.yml/badge.svg)](https://github.com/alisimsek55/TAYGUN-Portfolio/actions/workflows/tests.yml)
@@ -64,7 +78,7 @@ A university team project. I work on simulation and software integration: runnin
 | Languages | TypeScript, Solidity, Python |
 | Smart contracts | Foundry (unit, fuzz and invariant tests), OpenZeppelin, Uniswap v3 |
 | Web and backend | Next.js, React, wagmi/viem, Ponder, Hono, PostgreSQL, REST and GraphQL |
-| Computer vision and desktop | OpenCV, MediaPipe, Tkinter/ttkbootstrap |
+| Computer vision and deep learning | OpenCV, MediaPipe, PyTorch, scikit-learn, Tkinter/ttkbootstrap |
 | UAV simulation | PX4 SITL, Gazebo, QGroundControl, MAVLink, ROS 2 |
 | Testing and DevOps | pytest, GitHub Actions, Vercel, Render, Neon, pnpm/Turborepo, Linux |
 
