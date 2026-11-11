@@ -1,0 +1,49 @@
+{
+  "user": "alisimsek55",
+  "repos": [
+    "bean-leaf-disease-cnn",
+    "el-yuz-takibi",
+    "launchpad",
+    "TAYGUN-Portfolio"
+  ],
+  "bytes": {
+    "TypeScript": 181397,
+    "Python": 134390,
+    "Solidity": 91310,
+    "JavaScript": 2601,
+    "PowerShell": 1688,
+    "CSS": 663
+  },
+  "subtracted": [
+    {
+      "repo": "launchpad",
+      "path": "packages/shared/src/abis.ts",
+      "language": "TypeScript",
+      "bytes": 52193
+    }
+  ],
+  "card": [
+    {
+      "name": "TypeScript",
+      "percent": 44.0
+    },
+    {
+      "name": "Python",
+      "percent": 32.6
+    },
+    {
+      "name": "Solidity",
+      "percent": 22.2
+    },
+    {
+      "name": "Other",
+      "other": [
+        "JavaScript",
+        "PowerShell",
+        "CSS"
+      ],
+      "percent": 1.2
+    }
+  ],
+  "updated": "2026-11-11"
+}

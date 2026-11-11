@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="116" viewBox="0 0 480 116" role="img" aria-labelledby="t d">
+<title id="t">Languages</title>
+<desc id="d">TypeScript 44.0%, Python 32.6%, Solidity 22.2%, Other 1.2%</desc>
+<style>text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;}</style>
+<defs><clipPath id="bar"><rect x="0" y="30" width="480" height="8" rx="4.0"/></clipPath></defs>
+<text x="0" y="17" font-size="16" font-weight="600" fill="#f0f6fc">Languages</text>
+<g clip-path="url(#bar)">
+<rect x="0.00" y="30" width="208.56" height="8" fill="#3178c6"/>
+<rect x="210.56" y="30" width="154.52" height="8" fill="#3572A5"/>
+<rect x="367.08" y="30" width="105.23" height="8" fill="#AA6746"/>
+<rect x="474.31" y="30" width="5.69" height="8" fill="#8b949e"/>
+</g>
+<circle cx="4" cy="54" r="4" fill="#3178c6"/>
+<text x="14" y="58" font-size="12"><tspan font-weight="600" fill="#f0f6fc">TypeScript</tspan><tspan dx="6" fill="#9198a1">44.0%</tspan></text>
+<circle cx="244" cy="54" r="4" fill="#3572A5"/>
+<text x="254" y="58" font-size="12"><tspan font-weight="600" fill="#f0f6fc">Python</tspan><tspan dx="6" fill="#9198a1">32.6%</tspan></text>
+<circle cx="4" cy="76" r="4" fill="#AA6746"/>
+<text x="14" y="80" font-size="12"><tspan font-weight="600" fill="#f0f6fc">Solidity</tspan><tspan dx="6" fill="#9198a1">22.2%</tspan></text>
+<circle cx="244" cy="76" r="4" fill="#8b949e"/>
+<text x="254" y="80" font-size="12"><tspan font-weight="600" fill="#f0f6fc">Other</tspan><tspan dx="6" fill="#9198a1">1.2%</tspan></text>
+<text x="0" y="108" font-size="11" fill="#9198a1">Across 4 public repos · by bytes of code · updated 2026-11-11</text>
+</svg>
