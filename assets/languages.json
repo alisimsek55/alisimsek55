@@ -1,0 +1,46 @@
+{
+  "user": "alisimsek55",
+  "repos": [
+    "el-yuz-takibi",
+    "launchpad",
+    "TAYGUN-Portfolio"
+  ],
+  "bytes": {
+    "TypeScript": 181397,
+    "Solidity": 91310,
+    "Python": 32446,
+    "JavaScript": 2601,
+    "CSS": 663
+  },
+  "subtracted": [
+    {
+      "repo": "launchpad",
+      "path": "packages/shared/src/abis.ts",
+      "language": "TypeScript",
+      "bytes": 52193
+    }
+  ],
+  "card": [
+    {
+      "name": "TypeScript",
+      "percent": 58.8
+    },
+    {
+      "name": "Solidity",
+      "percent": 29.6
+    },
+    {
+      "name": "Python",
+      "percent": 10.5
+    },
+    {
+      "name": "Other",
+      "other": [
+        "JavaScript",
+        "CSS"
+      ],
+      "percent": 1.1
+    }
+  ],
+  "updated": "2026-11-11"
+}
