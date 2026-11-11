@@ -210,11 +210,14 @@ def summarize(data: dict, cfg: dict) -> list[dict]:
     return rows
 
 
-def render_svg(rows: list[dict], colors: dict[str, str], theme: str, title: str, footer: str) -> str:
+def render_svg(rows: list[dict], colors: dict[str, str], theme: str, title: str, footer: str,
+               show_title: bool = True) -> str:
     t = THEMES[theme]
     width = 480
     bar_y, bar_h, gap = 30, 8, 2
     col_w, row_h, legend_y = 240, 22, 58
+    if not show_title:  # no heading: pull the bar and legend up by the heading's height
+        bar_y, legend_y = 2, 30
     n_rows = (len(rows) + 1) // 2
     footer_y = legend_y + n_rows * row_h + 6
     height = footer_y + 8
@@ -226,9 +229,10 @@ def render_svg(rows: list[dict], colors: dict[str, str], theme: str, title: str,
         '<desc id="d">' + escape(", ".join(f"{r['name']} {r['percent']:.1f}%" for r in rows)) + "</desc>",
         f'<style>text{{font-family:{FONT};}}</style>',
         f'<defs><clipPath id="bar"><rect x="0" y="{bar_y}" width="{width}" height="{bar_h}" rx="{bar_h / 2}"/></clipPath></defs>',
-        f'<text x="0" y="17" font-size="16" font-weight="600" fill="{t["fg"]}">{escape(title)}</text>',
-        '<g clip-path="url(#bar)">',
     ]
+    if show_title:
+        parts.append(f'<text x="0" y="17" font-size="16" font-weight="600" fill="{t["fg"]}">{escape(title)}</text>')
+    parts.append('<g clip-path="url(#bar)">')
     usable = width - gap * (len(rows) - 1)
     x = 0.0
     for i, r in enumerate(rows):
@@ -293,7 +297,8 @@ def main() -> int:
     n = len(data["repos"])
     footer = f"Across {n} public repo{'s' if n != 1 else ''} · by bytes of code · updated {updated}"
     for theme in THEMES:
-        svg = render_svg(rows, colors, theme, cfg.get("title", "Languages"), footer)
+        svg = render_svg(rows, colors, theme, cfg.get("title", "Languages"), footer,
+                         bool(cfg.get("show_title", True)))
         (out_dir / f"languages-{theme}.svg").write_text(svg, encoding="utf-8", newline="\n")
     json_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
