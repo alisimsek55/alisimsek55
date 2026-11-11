@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.jpg" alt="" width="100%"></p>
+
 # Hi, I'm Ali Şimşek
 
 Final-year Software Engineering student at **OSTİM Technical University** (Ankara, graduating 2027).
