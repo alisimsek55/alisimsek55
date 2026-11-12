@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/banner.jpg" alt="" width="100%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alisimsek55/alisimsek55/main/assets/banner.jpg" alt="Ali Şimşek — Software Engineering portfolio" width="100%"></p>
 
 # Hi, I'm Ali Şimşek
 
