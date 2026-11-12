@@ -99,7 +99,7 @@ def ascii_art() -> list[list[tuple[str, str]]]:
 # ---- info panel -----------------------------------------------------------
 def github_stats(offline: bool) -> dict:
     if offline:
-        return {"repos": "?", "stars": "?", "followers": "?", "following": "?"}
+        return {"repos": "?", "followers": "?", "following": "?"}
     headers = {"Accept": "application/vnd.github+json", "User-Agent": "terminal-card"}
     token = os.environ.get("GITHUB_TOKEN")
     if token:
@@ -111,11 +111,8 @@ def github_stats(offline: bool) -> dict:
             return json.load(r)
 
     user = get(f"https://api.github.com/users/{USER}")
-    repos = get(f"https://api.github.com/users/{USER}/repos?per_page=100&type=owner")
-    stars = sum(r["stargazers_count"] for r in repos if not r["fork"])
     return {
         "repos": user["public_repos"],
-        "stars": stars,
         "followers": user["followers"],
         "following": user["following"],
     }
@@ -137,7 +134,6 @@ def info_lines(stats: dict) -> list[list[tuple[str, str]]]:
         kv("Host", "OSTIM Technical University"),
         kv("Kernel", "Software Engineering student"),
         kv("Uptime", "final year, graduating 2027"),
-        kv("Shell", "Claude Code"),
         kv("Location", "Ankara, Turkiye"),
         [],
         kv("Languages", "TypeScript, Solidity, Python"),
@@ -149,11 +145,10 @@ def info_lines(stats: dict) -> list[list[tuple[str, str]]]:
         section("Status"),
         [],
         kv("Open to", "software engineering internships"),
-        kv("Pet", "black cat (the one on the left)"),
         [],
         section("GitHub Stats"),
         [],
-        kv("Repos", f"{stats['repos']} | Stars: {stats['stars']}"),
+        kv("Repos", str(stats["repos"])),
         kv("Followers", f"{stats['followers']} | Following: {stats['following']}"),
     ]
 
