@@ -8,6 +8,8 @@ on:
     branches: [main]
     paths:
       - scripts/language_card.py
+      - scripts/terminal_card.py
+      - assets/cat.jpg
       - languages.config.json
       - .github/workflows/language-card.yml
 
@@ -30,6 +32,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Generate terminal card
+        run: |
+          pip install --quiet pillow numpy
+          python3 scripts/terminal_card.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit if changed
         run: |
           git add assets/
@@ -39,5 +48,5 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update language card"
+          git commit -m "Update profile cards"
           git push
