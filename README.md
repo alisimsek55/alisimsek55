@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/alisimsek55/alisimsek55/main/assets/terminal.svg" alt="Terminal-style card: my black cat drawn in ASCII next to a neofetch-style summary" width="100%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alisimsek55/alisimsek55/main/assets/terminal.svg?v=2" alt="Terminal-style card: my black cat drawn in ASCII next to a neofetch-style summary" width="100%"></p>
 
 # Hi, I'm Ali Şimşek
 
